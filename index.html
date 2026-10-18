@@ -1446,6 +1446,9 @@
 
       const term = searchInput.value.trim().toLocaleLowerCase("pt-BR");
       let visibleCount = 0;
+      productCards.forEach(function (card) {
+  card.style.display = "";
+});
 
       productCards.forEach(function (card) {
         const matches = card.textContent
