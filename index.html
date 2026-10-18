@@ -1469,8 +1469,37 @@
       }
     });
 
-    // Os links das categorias levam à área de ofertas.
-    // O filtro por categoria será implementado na próxima etapa.
+    
+    // Filtro demonstrativo por categoria
+    const categoryCards = document.querySelectorAll(".category-card");
+
+    categoryCards.forEach(function (categoryCard) {
+      categoryCard.addEventListener("click", function () {
+        const category = categoryCard.dataset.category;
+
+        // Limpa a busca anterior
+        searchInput.value = "";
+
+        let visibleCount = 0;
+
+        productCards.forEach(function (card) {
+          const matches = card.dataset.category === category;
+
+          card.style.display = matches ? "" : "none";
+
+          if (matches) visibleCount++;
+        });
+
+        document.getElementById("ofertas").scrollIntoView({
+          behavior: "smooth"
+        });
+
+        if (visibleCount === 0) {
+          alert("Ainda não há produtos demonstrativos nesta categoria.");
+        }
+      });
+    });
+
   </script>
 
 </body>
