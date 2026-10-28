@@ -1329,6 +1329,22 @@
     font-size: 23px;
   }
 }
+  /* VEESA — Banner mais compacto no celular */
+@media (max-width: 600px) {
+    .hero {
+        padding: 18px 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(24px, 5.5vw, 31px);
+        line-height: 1.12;
+    }
+
+    .hero p {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+}
   </style>
 </head>
 
