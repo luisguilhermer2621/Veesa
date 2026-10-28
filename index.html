@@ -1229,6 +1229,100 @@
   }
 }
 
+  /* BUSCA AVANÇADA VEESA */
+
+.veesa-filtros {
+  margin: 32px 0;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e2ebe5;
+  border-radius: 22px;
+  box-shadow: 0 8px 28px rgba(0, 55, 35, 0.05);
+}
+
+.veesa-filtros-titulo {
+  margin-bottom: 20px;
+}
+
+.veesa-filtros-titulo h2 {
+  color: #06432f;
+  font-size: 26px;
+  margin: 0 0 8px;
+}
+
+.veesa-filtros-titulo p {
+  color: #7a8982;
+  font-size: 15px;
+  margin: 0;
+}
+
+#form-filtros-veesa {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.veesa-filtro-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.veesa-filtro-campo label {
+  color: #06432f;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.veesa-filtro-campo select {
+  width: 100%;
+  padding: 15px;
+  background: #f8faf8;
+  border: 1px solid #dce7df;
+  border-radius: 12px;
+  color: #06432f;
+  font-size: 15px;
+}
+
+.veesa-filtro-campo select:disabled {
+  opacity: 0.55;
+}
+
+.veesa-filtro-botao {
+  width: 100%;
+  padding: 16px;
+  margin-top: 8px;
+  background: #c9f238;
+  color: #06432f;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.veesa-filtro-botao:hover {
+  background: #b7e62b;
+}
+
+/* Mostrar a busca avançada apenas no celular */
+
+@media (min-width: 769px) {
+  .veesa-filtros {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .veesa-filtros {
+    padding: 20px 16px;
+    margin: 24px 0;
+  }
+
+  .veesa-filtros-titulo h2 {
+    font-size: 23px;
+  }
+}
   </style>
 </head>
 
@@ -1358,6 +1452,51 @@
         comerciais reais serão disponibilizadas após a implantação dessas funções.
       </div>
 
+      <!-- BUSCA AVANÇADA VEESA -->
+
+<section class="veesa-filtros" id="busca-avancada">
+
+  <div class="veesa-filtros-titulo">
+    <h2>Busca avançada</h2>
+    <p>Encontre exatamente o produto que seu negócio precisa.</p>
+  </div>
+
+  <form id="form-filtros-veesa">
+
+    <div class="veesa-filtro-campo">
+      <label for="filtro-tipo">Tipo de produto</label>
+      <select id="filtro-tipo">
+        <option value="">Todos os tipos</option>
+        <option value="frutas">Frutas</option>
+        <option value="legumes">Legumes</option>
+        <option value="verduras">Verduras</option>
+        <option value="temperos">Temperos</option>
+        <option value="outros">Outros FLV</option>
+      </select>
+    </div>
+
+    <div class="veesa-filtro-campo">
+      <label for="filtro-produto">Produto</label>
+      <select id="filtro-produto" disabled>
+        <option value="">Todos os produtos</option>
+      </select>
+    </div>
+
+    <div class="veesa-filtro-campo">
+      <label for="filtro-variedade">Variedade</label>
+      <select id="filtro-variedade" disabled>
+        <option value="">Todas as variedades</option>
+      </select>
+    </div>
+
+    <button type="submit" class="veesa-filtro-botao">
+      Buscar ofertas →
+    </button>
+
+  </form>
+
+</section>
+      
       <!-- OFERTAS -->
 
       <section class="section" id="ofertas">
@@ -2180,6 +2319,122 @@
         }
       });
     });
+
+    
+/* VEESA — FILTROS AVANÇADOS */
+
+const filtroTipo = document.getElementById("filtro-tipo");
+const filtroProduto = document.getElementById("filtro-produto");
+const filtroVariedade = document.getElementById("filtro-variedade");
+const formularioFiltros = document.getElementById("veesa-filtros-form");
+
+const catalogoFiltros = {
+  frutas: {
+    Banana: ["Prata", "Nanica", "Terra", "Maçã"],
+    Morango: [],
+    Mamão: ["Formosa", "Papaia"],
+    Melancia: [],
+    Melão: [],
+    Limão: ["Tahiti", "Siciliano"],
+    Laranja: ["Pera", "Bahia", "Lima"],
+    Maçã: ["Fuji", "Gala"],
+    Abacaxi: ["Pérola"],
+    Uva: ["Itália", "Niágara", "Thompson"]
+  },
+  legumes: {
+    Tomate: ["Italiano", "Cereja"],
+    Batata: ["Inglesa", "Doce"],
+    Cenoura: [],
+    Abobrinha: [],
+    Alho: [],
+    Beterraba: [],
+    Cebola: [],
+    Chuchu: [],
+    Pepino: [],
+    Pimentão: ["Verde", "Vermelho", "Amarelo"]
+  },
+  verduras: {
+    Alface: ["Crespa", "Americana", "Lisa"],
+    Couve: [],
+    Rúcula: [],
+    Espinafre: [],
+    Acelga: [],
+    Agrião: [],
+    Repolho: [],
+    Almeirão: [],
+    Chicória: [],
+    Escarola: []
+  },
+  temperos: {
+    Coentro: [],
+    Salsa: [],
+    Cebolinha: [],
+    Manjericão: []
+  },
+  outros: {}
+};
+
+if (filtroTipo && filtroProduto && filtroVariedade && formularioFiltros) {
+
+  filtroTipo.addEventListener("change", function () {
+    filtroProduto.innerHTML = '<option value="">Todos os produtos</option>';
+    filtroVariedade.innerHTML = '<option value="">Todas as variedades</option>';
+
+    filtroProduto.disabled = !filtroTipo.value;
+    filtroVariedade.disabled = true;
+
+    const produtos = catalogoFiltros[filtroTipo.value] || {};
+
+    Object.keys(produtos).forEach(function (produto) {
+      filtroProduto.add(new Option(produto, produto));
+    });
+  });
+
+  filtroProduto.addEventListener("change", function () {
+    filtroVariedade.innerHTML = '<option value="">Todas as variedades</option>';
+
+    const produtos = catalogoFiltros[filtroTipo.value] || {};
+    const variedades = produtos[filtroProduto.value] || [];
+
+    filtroVariedade.disabled = variedades.length === 0;
+
+    variedades.forEach(function (variedade) {
+      filtroVariedade.add(new Option(variedade, variedade));
+    });
+  });
+
+  formularioFiltros.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+
+    const tipo = filtroTipo.value;
+    const produto = filtroProduto.value.toLowerCase();
+    const variedade = filtroVariedade.value.toLowerCase();
+
+    let encontrados = 0;
+
+    document.querySelectorAll(".product-card").forEach(function (card) {
+      const categoriaCorreta = !tipo || card.dataset.category === tipo;
+      const texto = card.textContent.toLowerCase();
+
+      const produtoCorreto = !produto || texto.includes(produto);
+      const variedadeCorreta = !variedade || texto.includes(variedade);
+
+      const mostrar = categoriaCorreta && produtoCorreto && variedadeCorreta;
+
+      card.style.display = mostrar ? "" : "none";
+
+      if (mostrar) encontrados++;
+    });
+
+    document.getElementById("ofertas").scrollIntoView({
+      behavior: "smooth"
+    });
+
+    if (encontrados === 0) {
+      alert("Nenhum produto demonstrativo encontrado para esses filtros.");
+    }
+  });
+}
 
   </script>
 
