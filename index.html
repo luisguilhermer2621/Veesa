@@ -1387,6 +1387,129 @@
   }
 }
 
+/* VEESA — CARDS TRABALHE CONOSCO */
+
+.veesa-carreiras {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.veesa-carreiras-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.veesa-carreira-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e0eae4;
+  border-radius: 24px;
+  box-shadow: 0 12px 32px rgba(0, 48, 32, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.veesa-carreira-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0, 48, 32, 0.12);
+}
+
+.veesa-carreira-imagem {
+  height: 240px;
+  overflow: hidden;
+  background: #e8f0eb;
+}
+
+.veesa-carreira-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.veesa-carreira-card:hover img {
+  transform: scale(1.04);
+}
+
+.veesa-carreira-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  padding: 30px;
+}
+
+.veesa-carreira-tag {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #397c45;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.veesa-carreira-conteudo h3 {
+  margin: 0 0 12px;
+  color: #003d2c;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.veesa-carreira-conteudo p {
+  margin: 0 0 26px;
+  color: #64776e;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.veesa-carreira-botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: auto;
+  padding: 12px 24px;
+  background: #c5fa26;
+  color: #003d2c;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.veesa-carreira-botao:hover {
+  background: #b2ed16;
+}
+
+@media (max-width: 768px) {
+  .veesa-carreiras {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .veesa-carreiras-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .veesa-carreira-imagem {
+    height: 210px;
+  }
+
+  .veesa-carreira-conteudo {
+    padding: 24px;
+  }
+
+  .veesa-carreira-conteudo h3 {
+    font-size: 24px;
+  }
+}
+
   </style>
 </head>
 
@@ -2155,76 +2278,118 @@
         </div>
       </section>
 
-      <!-- COMPRADORES, FORNECEDORES E TRANSPORTADORES -->
+      <!-- VEESA - OPORTUNIDADES PARA FORNECEDORES E PARCEIROS -->
 
       <section class="section" id="conheca">
         <div class="section-heading">
           <div>
-            <h2>Uma plataforma, três conexões</h2>
-            <p>Uma proposta para conectar os diferentes participantes do mercado.</p>
+            <h2>Faça parte do futuro do hortifruti</h2>
+            <p>Novas oportunidades para quem produz, fornece, transporta e conecta negócios.</p>
           </div>
         </div>
 
         <div class="audience-grid">
 
-          <article class="audience-card" id="compradores">
-            <div class="audience-icon" aria-hidden="true">⌕</div>
-            <h3>Para compradores</h3>
-            <p>
-              Encontre produtos, compare condições comerciais e descubra
-              fornecedores para o seu negócio.
-            </p>
-            <a href="#ofertas">Conheça a proposta →</a>
-          </article>
+           <article class="audience-card" id="fornecedores">
+  <div class="audience-icon" aria-hidden="true">↗</div>
 
-          <article class="audience-card" id="fornecedores">
-            <div class="audience-icon" aria-hidden="true">↗</div>
-            <h3>Para fornecedores</h3>
-            <p>
-              Prepare-se para apresentar seus produtos e ampliar suas
-              oportunidades comerciais.
-            </p>
-            <a href="#contato">Quero vender →</a>
-          </article>
+  <h3>Venda na Veesa</h3>
 
-          <article class="audience-card" id="transportadores">
-            <div class="audience-icon" aria-hidden="true">⇄</div>
-            <h3>Para transportadores</h3>
-            <p>
-              Uma proposta para conectar a cadeia de hortifruti a oportunidades
-              de transporte e frete.
-            </p>
-            <a href="#veesa-log">Conheça a Veesa Log →</a>
-          </article>
+  <p>
+    Apresente seus produtos a novos compradores e
+    amplie suas oportunidades de negócio em um
+    marketplace pensado para o hortifruti.
+  </p>
+
+  <a href="#contato">Quero ser fornecedor →</a>
+</article>
+
+         
+<article class="audience-card" id="transportadores">
+  <div class="audience-icon" aria-hidden="true">↗</div>
+
+  <h3>Transporte com a Veesa</h3>
+
+  <p>
+    Conecte-se a oportunidades de frete no mercado
+    de hortifruti e prepare-se para fazer parte
+    de uma logística mais inteligente.
+  </p>
+
+  <a href="#veesa-log">Conheça a Veesa Log →</a>
+</article>
+
 
         </div>
       </section>
+      
+<!-- TRABALHE CONOSCO -->
+<section class="section veesa-carreiras" id="trabalhe-conosco">
 
-      <!-- VEESA LOG -->
+  <div class="section-heading">
+    <div>
+      <h2>Faça parte da Veesa</h2>
+      <p>
+        Diferentes oportunidades para crescer
+        junto com o futuro do hortifruti.
+      </p>
+    </div>
+  </div>
 
-      <section class="section logistics-banner" id="veesa-log">
-        <div>
-          <div class="eyebrow">Logística conectada ao marketplace</div>
-          <h2>Veesa Log: o caminho entre a oferta e a entrega.</h2>
-          <p>
-            Uma proposta de logística integrada à experiência Veesa, para
-            aproximar quem precisa transportar hortifruti de quem pode realizar
-            o frete.
-          </p>
-          <a class="button button-lime" href="#transportadores">
-            Conheça nossa proposta →
-          </a>
-        </div>
+  <div class="veesa-carreiras-grid">
 
-        <div class="logistics-visual">
-          <img
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
-            alt="Operação logística e transporte de mercadorias"
-            loading="lazy"
-          >
-          <span>Marketplace + logística</span>
-        </div>
-      </section>
+    <article class="veesa-carreira-card" id="veesa-log">
+      <div class="veesa-carreira-imagem">
+        <img
+          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=85"
+          alt="Operação logística e distribuição de mercadorias"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="veesa-carreira-conteudo">
+        <span class="veesa-carreira-tag">LOGÍSTICA</span>
+        <h3>Veesa Log</h3>
+        <p>
+          Conecte seu veículo ou sua transportadora
+          a oportunidades de frete e participe de
+          uma nova experiência logística para o
+          mercado de hortifruti.
+        </p>
+
+        <a href="#contato" class="veesa-carreira-botao">
+          Quero transportar →
+        </a>
+      </div>
+    </article>
+
+    <article class="veesa-carreira-card" id="veesa-indica">
+      <div class="veesa-carreira-imagem">
+        <img
+          src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85"
+          alt="Profissionais reunidos em uma negociação comercial"
+          loading="lazy"
+        >
+      </div>
+
+      <div class="veesa-carreira-conteudo">
+        <span class="veesa-carreira-tag">OPORTUNIDADE COMERCIAL</span>
+        <h3>Veesa Indica</h3>
+        <p>
+          Transforme suas conexões em oportunidades.
+          Conheça nosso programa de indicações
+          e prepare-se para gerar renda conectando
+          novos negócios à Veesa.
+        </p>
+
+        <a href="#contato" class="veesa-carreira-botao">
+          Quero ser indicador →
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
 
       <!-- COMO FUNCIONA -->
 
