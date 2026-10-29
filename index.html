@@ -1363,20 +1363,25 @@
   }
 }
   
-/* VEESA — Busca avançada no computador */
+/* VEESA — Busca avançada horizontal no computador */
 @media (min-width: 769px) {
-  #form-filtros-veesa {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
+  #veesa-filtros-form {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 16px !important;
     align-items: end;
   }
 
-  #form-filtros-veesa .veesa-filtro-campo {
+  #veesa-filtros-form .veesa-filtro-campo {
     min-width: 0;
+    width: 100%;
   }
 
-  #form-filtros-veesa .veesa-filtro-botao {
+  #veesa-filtros-form .veesa-filtro-campo select {
+    width: 100%;
+  }
+
+  #veesa-filtros-form .veesa-filtro-botao {
     grid-column: 1 / -1;
     width: 100%;
   }
