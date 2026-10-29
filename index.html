@@ -1362,6 +1362,25 @@
     box-sizing: border-box;
   }
 }
+  
+/* VEESA — Busca avançada no computador */
+@media (min-width: 769px) {
+  #form-filtros-veesa {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    align-items: end;
+  }
+
+  #form-filtros-veesa .veesa-filtro-campo {
+    min-width: 0;
+  }
+
+  #form-filtros-veesa .veesa-filtro-botao {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+}
 
   </style>
 </head>
