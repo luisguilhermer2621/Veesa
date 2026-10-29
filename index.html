@@ -2391,7 +2391,22 @@ const filtroTipo = document.getElementById("filtro-tipo");
 const filtroProduto = document.getElementById("filtro-produto");
 const filtroVariedade = document.getElementById("filtro-variedade");
 const formularioFiltros = document.getElementById("veesa-filtros-form");
+formularioFiltros.addEventListener("submit", function(event) {
+  event.preventDefault();
 
+  const tipo = filtroTipo.value;
+  const produto = filtroProduto.value;
+  const variedade = filtroVariedade.value;
+
+  const params = new URLSearchParams();
+
+  if (tipo) params.set("tipo", tipo);
+  if (produto) params.set("produto", produto);
+  if (variedade) params.set("variedade", variedade);
+
+  window.location.href = "resultados.html?" + params.toString();
+});
+    
 const catalogoFiltros = {
   frutas: {
     Banana: ["Prata", "Nanica", "Terra", "Maçã"],
