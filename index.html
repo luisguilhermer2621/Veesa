@@ -1519,6 +1519,57 @@
   border-radius: 14px;
   margin-bottom: 22px;
 }
+    
+/* VEESA — Ícones do cabeçalho mobile */
+
+.header-mobile-actions {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .header-mobile-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .header-icon-button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .header-icon-button svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+  }
+
+  .header-icon-button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+
+}
+
   </style>
 </head>
 
@@ -1535,6 +1586,35 @@
     alt="Veesa - Hortifruti para o seu negócio"
   >
 </a>
+
+<!-- Ícones do cabeçalho mobile -->
+<div class="header-mobile-actions">
+
+  <button class="header-icon-button" type="button"
+          aria-label="Notificações"
+          title="Notificações">
+    <svg viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="1.8"
+         stroke-linecap="round" stroke-linejoin="round"
+         aria-hidden="true">
+      <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+      <path d="M10 21h4"/>
+    </svg>
+  </button>
+
+  <button class="header-icon-button" type="button"
+          aria-label="Acessar perfil"
+          title="Perfil">
+    <svg viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="1.8"
+         stroke-linecap="round" stroke-linejoin="round"
+         aria-hidden="true">
+      <circle cx="12" cy="8" r="4"/>
+      <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/>
+    </svg>
+  </button>
+
+</div>
 
 
         <nav class="main-nav" aria-label="Navegação principal">
