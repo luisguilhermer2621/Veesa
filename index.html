@@ -1592,6 +1592,123 @@
     width: 180px;
   }
 }
+
+    
+/* =========================================
+   VEESA — BANNER INSTITUCIONAL DO PRODUTOR
+   ========================================= */
+
+.veesa-produtor-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 390px;
+  padding: 48px 54px;
+  border-radius: 28px;
+  overflow: hidden;
+
+  background-image: url("banner-produtor.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.veesa-produtor-conteudo {
+  position: relative;
+  z-index: 1;
+  max-width: 510px;
+  color: #ffffff;
+}
+
+.veesa-produtor-etiqueta {
+  display: block;
+  margin-bottom: 16px;
+  color: #c9f332;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.veesa-produtor-conteudo h2 {
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-size: clamp(30px, 3.5vw, 46px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1px;
+}
+
+.veesa-produtor-conteudo p {
+  margin: 0 0 28px;
+  color: #f0f6f2;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.veesa-produtor-botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: #c9f332;
+  color: #073d2c;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.veesa-produtor-botao:hover {
+  background: #d9ff55;
+}
+
+/* VERSÃO MOBILE */
+
+@media (max-width: 768px) {
+
+  .veesa-produtor-banner {
+    align-items: flex-start;
+    min-height: 570px;
+    padding: 36px 26px;
+    border-radius: 26px;
+
+    background-image: url("banner-produtor-mobile.png");
+    background-position: center;
+  }
+
+  .veesa-produtor-conteudo {
+    max-width: 100%;
+  }
+
+  .veesa-produtor-etiqueta {
+    margin-bottom: 14px;
+    font-size: 11px;
+  }
+
+  .veesa-produtor-conteudo h2 {
+    margin-bottom: 16px;
+    font-size: clamp(28px, 7vw, 36px);
+    line-height: 1.15;
+  }
+
+  .veesa-produtor-conteudo p {
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .veesa-produtor-botao {
+    min-height: 48px;
+    padding: 13px 22px;
+    font-size: 14px;
+  }
+}
+
+    
   </style>
 </head>
 
@@ -2391,53 +2508,32 @@
 
       <!-- VEESA - OPORTUNIDADES PARA FORNECEDORES E PARCEIROS -->
 
-      <section class="section" id="conheca">
-        <div class="section-heading">
-          <div>
-            <h2>Faça parte do futuro do hortifruti</h2>
-            <p>Novas oportunidades para quem produz, fornece, transporta e conecta negócios.</p>
-          </div>
-        </div>
+      
+<section class="section" id="conheca">
+  <div class="veesa-produtor-banner" id="fornecedores">
+    <div class="veesa-produtor-conteudo">
+      <span class="veesa-produtor-etiqueta">
+        PARA QUEM PRODUZ
+      </span>
 
-        <div class="audience-grid">
+      <h2>
+        Sua produção merece
+        novos mercados.
+      </h2>
 
-           <article class="audience-card" id="fornecedores">
-  <img
-  src="veesa-fornecedores.png"
-  alt="Produtor rural apresentando uma caixa de hortifruti fresco"
-  class="veesa-fornecedor-imagem"
-  loading="lazy"
->
+      <p>
+        Conecte seus produtos a novos compradores
+        e amplie suas oportunidades de negócio
+        com a Veesa.
+      </p>
 
-  <h3>Venda na Veesa</h3>
+      <a href="#contato" class="veesa-produtor-botao">
+        Quero vender na Veesa &rarr;
+      </a>
+    </div>
+  </div>
+</section>
 
-  <p>
-    Apresente seus produtos a novos compradores e
-    amplie suas oportunidades de negócio em um
-    marketplace pensado para o hortifruti.
-  </p>
-
-  <a href="#contato">Quero ser fornecedor →</a>
-</article>
-
-         
-<article class="audience-card" id="transportadores">
-  <div class="audience-icon" aria-hidden="true">↗</div>
-
-  <h3>Transporte com a Veesa</h3>
-
-  <p>
-    Conecte-se a oportunidades de frete no mercado
-    de hortifruti e prepare-se para fazer parte
-    de uma logística mais inteligente.
-  </p>
-
-  <a href="#veesa-log">Conheça a Veesa Log →</a>
-</article>
-
-
-        </div>
-      </section>
       
 <!-- TRABALHE CONOSCO -->
 <section class="section veesa-carreiras" id="trabalhe-conosco">
